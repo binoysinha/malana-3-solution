@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+	<title>XYZ Blogs</title>
+	<meta charset="utf-8">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+	<link rel=stylesheet href="css/styles.css">
+	<link rel="preconnect" href="https://salesforce-blogs.herokuapp.com/blogs/api/">
+</head>
+
+<body>
+	<header>
+		<h1 id="app-name">My blog</h1>
+		<div class="btn-group">
+			<button id="create-post" class="primary-btn">Create new post</button>
+			<button id="delete-all-post">Delete all</button>
+		</div>
+	</header>
+	<div class="loader">
+		<svg version="1.1" id="L9" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+			y="0px" viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve">
+			<path fill="#6200EE"
+				d="M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50">
+				<animateTransform attributeName="transform" attributeType="XML" type="rotate" dur="1s" from="0 50 50"
+					to="360 50 50" repeatCount="indefinite" />
+			</path>
+		</svg>
+	</div>
+	<main>
+		<div class="main-container hide">
+			<aside class="posts-index">
+				<h2>All Posts</h2>
+				<ul id="posts-list"></ul>
+			</aside>
+			<section id="posts-container" aria-live="assertive"></section>
+		</div>
+		<section class="create-blog" aria-hidden="true">
+			<form id="form" class="hide">
+				<h2 id="mode-type"></h2>
+				<div class="form-control">
+					<label for="post-title">Title</label>
+					<input type="text" id="post-title" required />
+				</div>
+				<div class="form-control">
+					<label for="post-text">Text</label>
+					<textarea id="post-text" rows="10" cols="40" required></textarea>
+				</div>
+				<div class="btn-group">
+					<button type="submit" class="primary-btn">Save</button>
+					<button id="reset-form">Cancel</button>
+
+				</div>
+			</form>
+		</section>
+	</main>
+	<script src="js/scripts.js"></script>
+</body>
+
+</html>
